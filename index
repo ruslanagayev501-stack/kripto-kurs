@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Məlumat təhlükəsizliyi kursları</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f6;--surf:#fff;--ink:#14213d;--mute:#5a6678;--line:#cfd8e3;--a:#0f766e;--b:#3b4cca;--c:#b4540a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0f1622;--surf:#172131;--ink:#e6ecf5;--mute:#9aa8bd;--line:#2a374b;--a:#4fd1c0;--b:#8e9bff;--c:#f0a35e}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0f1622;--surf:#172131;--ink:#e6ecf5;--mute:#9aa8bd;--line:#2a374b;--a:#4fd1c0;--b:#8e9bff;--c:#f0a35e}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "Source Serif 4",Georgia,serif}
+h1,h2,h3,.tab{font-family:"Bricolage Grotesque",system-ui,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+header{padding:56px 0 28px}
+h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.08;margin:0 0 14px;font-weight:700;letter-spacing:-.02em}
+header p{max-width:60ch;color:var(--mute);margin:0}
+.demo{background:var(--surf);border:1px solid var(--line);border-radius:10px;padding:20px;margin:28px 0 36px}
+.demo label{font:500 .9rem "Bricolage Grotesque",sans-serif;color:var(--mute);display:block;margin-bottom:6px}
+.demo input[type=text]{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+.row{display:flex;gap:14px;align-items:center;margin:14px 0;flex-wrap:wrap}
+.row input[type=range]{flex:1;min-width:140px;accent-color:var(--a)}
+.out{font:600 1.5rem/1.3 "Bricolage Grotesque",sans-serif;letter-spacing:.04em;color:var(--a);word-break:break-all;min-height:2em}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-bottom:24px}
+.tab{background:none;border:0;border-bottom:3px solid transparent;color:var(--mute);font-size:1rem;font-weight:500;padding:10px 12px;cursor:pointer}
+.tab[aria-selected=true]{color:var(--ink);border-color:var(--tc)}
+.tab:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(--b);outline-offset:2px}
+.panel{display:none}.panel.on{display:block}
+.panel h2{font-size:1.9rem;margin:0 0 8px;color:var(--tc)}
+.panel>p{color:var(--mute);margin:0 0 22px;max-width:62ch}
+details{background:var(--surf);border:1px solid var(--line);border-radius:8px;margin-bottom:10px;padding:0 16px}
+summary{cursor:pointer;padding:14px 0;font:500 1.05rem "Bricolage Grotesque",sans-serif}
+details p{margin:0 0 14px;max-width:65ch}
+.terms{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+.terms span{border:1px solid var(--tc);color:var(--tc);border-radius:99px;padding:2px 12px;font-size:.9rem}
+footer{padding:40px 0 48px;color:var(--mute);font-size:.9rem}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.pill{font:500 .95rem "Bricolage Grotesque",system-ui,sans-serif;background:var(--bg);color:var(--mute);border:1px solid var(--line);border-radius:99px;padding:6px 16px;cursor:pointer}
+.pill.on{background:var(--a);border-color:var(--a);color:var(--surf)}
+.pill:focus-visible{outline:2px solid var(--b);outline-offset:2px}
+.pill.sw{margin-top:8px;color:var(--ink)}
+.row label{display:inline-flex;gap:6px;align-items:center;margin:0}
+.demo select,.demo input[type=number]{font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+.mx{display:grid;grid-template-columns:repeat(2,72px);gap:6px}
+.note{color:var(--mute);font-size:.95rem;margin:4px 0 0;min-height:1.5em;word-break:break-word}
+.pg{border-collapse:collapse;font:600 1rem "Bricolage Grotesque",sans-serif}
+.pg td{border:1px solid var(--line);width:36px;height:36px;text-align:center}
+.params[hidden]{display:none}
+.save{margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+.save h3{font-size:1.2rem;margin:20px 0 8px}
+.tw{overflow-x:auto}
+.lg{border-collapse:collapse;width:100%;font-size:.9rem}
+.lg th,.lg td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;white-space:nowrap}
+.lg th{color:var(--mute);font-family:"Bricolage Grotesque",sans-serif;font-weight:500}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>Məlumatı qorumağın üç qatı</h1>
+<p>Bulud mühitindən idarəetmə sistemlərinə, oradan riyaziyyata qədər: üç fənn üzrə dərs materialları və qısa izahlar.</p>
+</header>
+
+<section class="demo" aria-label="Klassik şifrələr laboratoriyası">
+<div class="pills" role="group" aria-label="Şifrə növü">
+<button class="pill on" data-c="caesar" aria-pressed="true">Sezar</button><button class="pill" data-c="affine" aria-pressed="false">Affine</button><button class="pill" data-c="hill" aria-pressed="false">Hill</button><button class="pill" data-c="playfair" aria-pressed="false">Playfair</button>
+</div>
+<div class="row"><label><input type="radio" name="m" value="e" checked> Şifrələ</label><label><input type="radio" name="m" value="d"> Deşifrələ</label></div>
+<label for="t">Mətn (latın hərfləri ilə)</label>
+<input id="t" type="text" value="Salam dunya">
+<div class="params" data-for="caesar"><div class="row"><label for="k">Sürüşmə k:</label><input id="k" type="range" min="1" max="25" value="3"><b id="kv">3</b></div></div>
+<div class="params" data-for="affine" hidden><div class="row"><label for="aa">a:</label><select id="aa"></select><label for="ab">b:</label><input id="ab" type="range" min="0" max="25" value="8"><b id="abv">8</b></div></div>
+<div class="params" data-for="hill" hidden><div class="row"><span>Açar matrisi K:</span><div class="mx"><input type="number" id="h0" value="3" min="0" max="25" aria-label="K 1,1"><input type="number" id="h1" value="3" min="0" max="25" aria-label="K 1,2"><input type="number" id="h2" value="2" min="0" max="25" aria-label="K 2,1"><input type="number" id="h3" value="5" min="0" max="25" aria-label="K 2,2"></div></div></div>
+<div class="params" data-for="playfair" hidden><div class="row"><label for="pk">Açar söz:</label><input id="pk" type="text" value="MONARCHY"></div><table class="pg" id="pg" aria-label="Playfair 5x5 cədvəli"></table></div>
+<div class="out" id="o" aria-live="polite"></div>
+<p class="note" id="n"></p>
+<button class="pill sw" id="sw" type="button">⇄ Nəticəni girişə köçür və rejimi dəyiş</button>
+<div class="save">
+<label for="ad">Adınız (bazaya yazılacaq)</label>
+<div class="row"><input id="ad" type="text" maxlength="40" placeholder="Məsələn: Ruslan"><button class="pill on" id="sv" type="button">Yadda saxla</button></div>
+<p class="note" id="st" aria-live="polite"></p>
+<h3>Son əməliyyatlar</h3>
+<div class="tw"><table class="lg"><thead><tr><th>Tarix</th><th>Ad</th><th>Şifrə</th><th>Rejim</th><th>Giriş</th><th>Nəticə</th></tr></thead><tbody id="lg"><tr><td colspan="6">Yüklənir...</td></tr></tbody></table></div>
+</div>
+</section>
+
+<div class="tabs" role="tablist">
+<button class="tab" role="tab" aria-selected="true" data-p="0" style="--tc:var(--a)">Bulud təhlükəsizliyi</button>
+<button class="tab" role="tab" aria-selected="false" data-p="1" style="--tc:var(--b)">İT təhlükəsizlik idarəetməsi</button>
+<button class="tab" role="tab" aria-selected="false" data-p="2" style="--tc:var(--c)">Kriptoqrafiyanın əsasları</button>
+</div>
+
+<section class="panel on" style="--tc:var(--a)">
+<h2>Bulud təhlükəsizliyi</h2>
+<p>Bulud xidmətlərində məlumatın, tətbiqlərin və infrastrukturun qorunması: kim nəyə cavabdehdir və risklər harada yaranır.</p>
+<details open><summary>Bulud modelləri: IaaS, PaaS, SaaS</summary><p>Hər modeldə təhlükəsizlik məsuliyyəti provayder və müştəri arasında fərqli bölünür. IaaS-da müştəri əməliyyat sistemindən yuxarını, SaaS-da isə əsasən məlumatı və giriş hüquqlarını idarə edir.</p></details>
+<details><summary>Paylaşılan məsuliyyət modeli</summary><p>Provayder “buludun təhlükəsizliyinə” (fiziki mərkəzlər, hipervizor), müştəri isə “buludda olanın təhlükəsizliyinə” (konfiqurasiya, məlumat, istifadəçilər) cavabdehdir.</p></details>
+<details><summary>Kimlik və giriş idarəetməsi (IAM)</summary><p>Minimum səlahiyyət prinsipi, rollar, çoxfaktorlu autentifikasiya və xidmət hesablarının idarəsi. Çox hadisənin səbəbi pozulmuş hesablar və həddən artıq geniş icazələrdir.</p></details>
+<details><summary>Məlumatın şifrələnməsi və açar idarəsi</summary><p>Saxlanma zamanı, ötürülmə zamanı şifrələmə və açarların KMS/HSM vasitəsilə idarə olunması.</p></details>
+<details><summary>Şəbəkə və konfiqurasiya riskləri</summary><p>Açıq saxlama qutuları, səhv təyin olunmuş təhlükəsizlik qrupları, seqmentasiya. Konfiqurasiya səhvləri ən geniş yayılmış risklərdəndir.</p></details>
+<details><summary>Monitorinq, jurnal və insidentə cavab</summary><p>Mərkəzləşdirilmiş jurnallar, xəbərdarlıq qaydaları, bulud mühiti üçün insident planı.</p></details>
+<div class="terms"><span>Zero Trust</span><span>CSPM</span><span>CASB</span><span>Konteyner təhlükəsizliyi</span><span>Uyğunluq</span></div>
+</section>
+
+<section class="panel" style="--tc:var(--b)">
+<h2>İnformasiya təhlükəsizliyinin idarəedilməsi sistemləri</h2>
+<p>Təhlükəsizliyi təşkilat səviyyəsində sistemli idarə etmək üçün çərçivə: siyasətlər, risk qiymətləndirməsi, nəzarətlər və davamlı təkmilləşdirmə.</p>
+<details open><summary>İTİS-in məqsədi və CIA üçlüyü</summary><p>Məxfilik, bütövlük və əlçatanlıq təşkilatın aktivləri üçün qorunmalı əsas xassələrdir. İTİS bunu təsadüfi deyil, planlı şəkildə təmin edir.</p></details>
+<details><summary>ISO/IEC 27001 standartı</summary><p>İTİS üçün tələbləri müəyyən edir: kontekst, rəhbərliyin öhdəliyi, planlaşdırma, dəstək, fəaliyyət, qiymətləndirmə və təkmilləşdirmə. ISO/IEC 27002 isə nəzarətlərin tətbiqi üzrə rəhbərlik verir.</p></details>
+<details><summary>Risk qiymətləndirməsi və emalı</summary><p>Aktivlərin, təhdidlərin və zəifliklərin müəyyənləşdirilməsi, riskin ehtimal və təsir üzrə qiymətləndirilməsi, sonra azaltma, qəbul, köçürmə və ya qaçınma qərarı.</p></details>
+<details><summary>Tətbiq olunma bəyanatı (SoA)</summary><p>Hansı nəzarətlərin seçildiyini, tətbiq olunduğunu və ya istisna edildiyini əsaslandırılmış şəkildə göstərən sənəd.</p></details>
+<details><summary>PDCA dövrü və daxili audit</summary><p>Planlaşdır, icra et, yoxla, təkmilləşdir. Daxili audit və rəhbərliyin təhlili sistemin işlək qalmasını təmin edir.</p></details>
+<details><summary>Sertifikatlaşdırma və digər çərçivələr</summary><p>Akkreditə olunmuş orqan tərəfindən audit. Müqayisə üçün NIST CSF, COBIT və ISO 27701 (məxfilik) də öyrənilir.</p></details>
+<div class="terms"><span>Siyasət</span><span>Aktiv reyestri</span><span>Nəzarətlər</span><span>Uyğunsuzluq</span><span>Davamlı təkmilləşdirmə</span></div>
+</section>
+
+<section class="panel" style="--tc:var(--c)">
+<h2>Kriptoqrafiyanın əsasları</h2>
+<p>Məlumatı məxfi, bütöv və təsdiqlənmiş saxlamaq üçün riyazi üsullar. Yuxarıdakı Sezar şifrəsi ən sadə nümunədir; müasir sistemlər isə çox güclüdür.</p>
+<details open><summary>Simmetrik şifrələmə</summary><p>Şifrələmə və deşifrələmə üçün eyni açar işlədilir. AES müasir standartdır; blok şifrələr ECB, CBC, GCM kimi rejimlərdə istifadə olunur. Çətinlik açarın təhlükəsiz paylaşılmasıdır.</p></details>
+<details><summary>Asimmetrik şifrələmə</summary><p>Açıq və gizli açar cütü. RSA və elliptik əyri üsulları (ECC) açar mübadiləsi və rəqəmsal imza üçün işlədilir.</p></details>
+<details><summary>Hash funksiyaları</summary><p>İxtiyari ölçülü məlumatdan sabit uzunluqlu iz çıxarır; geri qaytarılmazdır və kiçik dəyişiklik tam fərqli nəticə verir. SHA-256 geniş yayılıb, MD5 və SHA-1 köhnəlib.</p></details>
+<details><summary>Rəqəmsal imza və MAC</summary><p>İmza məlumatın mənbəyini və bütövlüyünü təsdiqləyir, inkar edilməzlik təmin edir. HMAC isə ortaq açarla bütövlüyü yoxlayır.</p></details>
+<details><summary>Açar mübadiləsi və PKI</summary><p>Diffie-Hellman ilə ortaq açarın yaradılması, sertifikatlar və sertifikat orqanları vasitəsilə açıq açarlara etibar.</p></details>
+<details><summary>TLS və praktik tətbiq</summary><p>Brauzer bağlantısında asimmetrik üsul açar razılaşması, simmetrik üsul isə əsas məlumat axını üçün istifadə olunur. Əsas qayda: öz kriptoqrafiyanızı yazmayın, yoxlanmış kitabxanalardan istifadə edin.</p></details>
+<details><summary>Klassik şifrələr: Sezar, Affine, Hill, Playfair</summary><p>Sezar: C = (P + k) mod 26. Affine: C = (a·P + b) mod 26, deşifrələmə P = a⁻¹·(C − b) mod 26, burada a ilə 26 qarşılıqlı sadə olmalıdır. Hill: hərf blokları K matrisinə vurulur, deşifrələmə üçün K⁻¹ mod 26 lazımdır. Playfair: 5×5 cədvəldə hərf cütləri sətir, sütun və ya düzbucaqlı qaydası ilə dəyişdirilir. Yuxarıdakı laboratoriyada hamısını şifrələyib deşifrələyə bilərsiniz.</p></details>
+<div class="terms"><span>AES</span><span>RSA</span><span>SHA-256</span><span>Duz (salt)</span><span>Sertifikat</span></div>
+</section>
+
+<footer>Tədris məqsədli materialdır. Mətnləri öz mühazirə planınıza uyğun redaktə edə bilərsiniz.</footer>
+</div>
+<script>
+var tabs=document.querySelectorAll('.tab'),ps=document.querySelectorAll('.panel');
+tabs.forEach(function(t,i){t.onclick=function(){tabs.forEach(function(x,j){x.setAttribute('aria-selected',i===j);ps[j].classList.toggle('on',i===j)})}});
+var $=function(i){return document.getElementById(i)},M=function(x,n){return((x%n)+n)%n},cur='caesar',t=$('t'),o=$('o'),nt=$('n'),
+S={caesar:'Salam dunya',affine:'Salam dunya',hill:'HELP',playfair:'Instruments'},
+gcd=function(a,b){return b?gcd(b,a%b):a},
+inv=function(a){for(var i=1;i<26;i++)if(M(a*i,26)===1)return i;return 0},
+mapL=function(s,f){return s.replace(/[a-z]/gi,function(c){var b=c<='Z'?65:97;return String.fromCharCode(f(c.charCodeAt(0)-b)+b)})},
+isE=function(){return document.querySelector('input[name=m]:checked').value==='e'},
+az=function(s){return s.toUpperCase().replace(/[^A-Z]/g,'')};
+$('aa').innerHTML=[1,3,5,7,9,11,15,17,19,21,23,25].map(function(a){return'<option>'+a+'</option>'}).join('');$('aa').value=5;
+function hill(s,e){
+var m=[0,1,2,3].map(function(i){return+$('h'+i).value||0}),d=M(m[0]*m[3]-m[1]*m[2],26);
+if(gcd(d,26)!==1)return{err:'det(K) = '+d+' ilə 26 qarşılıqlı sadə deyil, bu açar yararsızdır.'};
+var di=inv(d),K=e?m:[m[3],-m[1],-m[2],m[0]].map(function(x){return M(x*di,26)}),L=az(s),r='',i,p,q;
+if(L.length%2)L+='X';
+for(i=0;i<L.length;i+=2){p=L.charCodeAt(i)-65;q=L.charCodeAt(i+1)-65;r+=String.fromCharCode(M(K[0]*p+K[1]*q,26)+65,M(K[2]*p+K[3]*q,26)+65)}
+return{t:r,n:'K'+(e?'':'⁻¹')+' = ['+K[0]+' '+K[1]+' ; '+K[2]+' '+K[3]+'] mod 26. Bloklar: '+(L.match(/../g)||[]).join(' ')+(e?'':'. Sondakı əlavə X-i özünüz çıxarın.')}}
+function pf(s,e){
+var key=az($('pk').value).replace(/J/g,'I')+'ABCDEFGHIKLMNOPQRSTUVWXYZ',g='',i,P=[],L=az(s).replace(/J/g,'I'),h='';
+for(i=0;i<key.length;i++)if(g.indexOf(key[i])<0)g+=key[i];
+for(i=0;i<25;i++)h+=(i%5?'':'<tr>')+'<td>'+g[i]+'</td>'+(i%5===4?'</tr>':'');
+$('pg').innerHTML=h;
+if(e){for(i=0;i<L.length;){var a=L[i],b=L[i+1];if(!b){P.push(a+'X');break}if(a===b){P.push(a+'X');i++}else{P.push(a+b);i+=2}}}
+else{if(L.length%2)L+='X';for(i=0;i<L.length;i+=2)P.push(L[i]+L[i+1])}
+var d=e?1:4,r=P.map(function(p){var x=g.indexOf(p[0]),y=g.indexOf(p[1]),rx=x/5|0,cx=x%5,ry=y/5|0,cy=y%5;
+if(rx===ry)return g[rx*5+(cx+d)%5]+g[ry*5+(cy+d)%5];
+if(cx===cy)return g[((rx+d)%5)*5+cx]+g[((ry+d)%5)*5+cy];
+return g[rx*5+cy]+g[ry*5+cx]}).join('');
+return{t:r,n:'J=I. Cütlər: '+P.join(' ')+(e?'':'. Artıq X hərflərini özünüz çıxarın.')}}
+function run(){
+var e=isE(),s=t.value,r;
+document.querySelectorAll('.params').forEach(function(p){p.hidden=p.dataset.for!==cur});
+$('kv').textContent=$('k').value;$('abv').textContent=$('ab').value;
+if(cur==='caesar'){var k=+$('k').value;r={t:mapL(s,function(p){return M(p+(e?k:-k),26)}),n:e?'C = (P + '+k+') mod 26':'P = (C − '+k+') mod 26'}}
+else if(cur==='affine'){var a=+$('aa').value,b=+$('ab').value,ai=inv(a);r={t:mapL(s,function(p){return e?M(a*p+b,26):M(ai*(p-b),26)}),n:e?'C = ('+a+'·P + '+b+') mod 26':'P = '+ai+'·(C − '+b+') mod 26, a⁻¹ = '+ai}}
+else r=cur==='hill'?hill(s,e):pf(s,e);
+o.textContent=r.err?'':r.t;nt.textContent=r.err||r.n}
+t.oninput=run;
+document.querySelectorAll('.params input,.params select,input[name=m]').forEach(function(x){x.oninput=run;x.onchange=run});
+document.querySelectorAll('.pill[data-c]').forEach(function(b){b.onclick=function(){cur=b.dataset.c;document.querySelectorAll('.pill[data-c]').forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});t.value=S[cur];document.querySelector('input[name=m][value=e]').checked=true;run()}});
+$('sw').onclick=function(){var v=o.textContent;if(!v)return;t.value=v;document.querySelector('input[name=m][value='+(isE()?'d':'e')+']').checked=true;run()};
+var DB='https://tiedapzwupxbflrzyztf.supabase.co/rest/v1/islemler',KEY='sb_publishable_Q3lxM9toMPClSuaCGA_GVg_f80YG-zP',
+H={apikey:KEY,'Content-Type':'application/json'},
+CN={caesar:'Sezar',affine:'Affine',hill:'Hill',playfair:'Playfair'};
+function loadLog(){
+fetch(DB+'?select=*&order=tarix.desc&limit=10',{headers:H}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(rows){
+var b=$('lg');b.textContent='';
+if(!rows.length){b.innerHTML='<tr><td colspan="6">Hələ əməliyyat yoxdur.</td></tr>';return}
+rows.forEach(function(x){var tr=document.createElement('tr');
+[new Date(x.tarix).toLocaleString('az'),x.ad,CN[x.sifre_novu]||x.sifre_novu,x.rejim==='sifrele'?'Şifrələ':'Deşifrələ',x.giris,x.netice].forEach(function(v){var td=document.createElement('td');td.textContent=v;tr.appendChild(td)});
+b.appendChild(tr)})}).catch(function(){$('lg').innerHTML='<tr><td colspan="6">Bazaya qoşulmaq alınmadı.</td></tr>'})}
+$('sv').onclick=function(){
+var ad=$('ad').value.trim(),res=o.textContent;
+if(!ad){$('st').textContent='Əvvəl adınızı yazın.';return}
+if(!res){$('st').textContent='Saxlamaq üçün nəticə olmalıdır.';return}
+$('sv').disabled=true;$('st').textContent='Saxlanılır...';
+fetch(DB,{method:'POST',headers:Object.assign({Prefer:'return=minimal'},H),body:JSON.stringify({ad:ad.slice(0,40),sifre_novu:cur,rejim:isE()?'sifrele':'desifrele',giris:t.value.slice(0,200),netice:res.slice(0,400)})})
+.then(function(r){if(!r.ok)throw 0;$('st').textContent='Yadda saxlanıldı ✓';loadLog()})
+.catch(function(){$('st').textContent='Xəta: saxlamaq alınmadı.'})
+.then(function(){$('sv').disabled=false})};
+loadLog();
+run();
+</script>
+</body>
+</html>
